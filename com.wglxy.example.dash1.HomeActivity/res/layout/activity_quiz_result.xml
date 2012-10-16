@@ -1,0 +1,101 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:visibility="visible" >
+
+            <LinearLayout style="@style/TitleBar" >
+
+                <ImageButton
+                    style="@style/TitleBarAction"
+                    android:contentDescription="@string/description_home"
+                    android:onClick="onClickHome"
+                    android:src="@drawable/title_home" />
+
+                <ImageView style="@style/TitleBarSeparator" />
+
+                <TextView style="@style/TitleBarText" />
+
+                <ImageButton
+                    style="@style/TitleBarAction"
+                    android:contentDescription="@string/description_about"
+                    android:onClick="onClickAbout"
+                    android:src="@drawable/title_about" />
+
+                <ImageButton
+                    style="@style/TitleBarAction"
+                    android:contentDescription="@string/description_search"
+                    android:onClick="onClickSearch"
+                    android:src="@drawable/title_search" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <SeekBar
+            android:id="@+id/seekBar1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="100" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5.63"
+            android:src="@drawable/quiz_result" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Congratulate! You have completed all quiz in the tour. Below is your result." />
+
+        <GridView
+            android:id="@+id/gridView1"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_weight="2"
+            android:numColumns="2" >
+        </GridView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:visibility="visible" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <ImageButton
+                    android:id="@+id/imageButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClickPre"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/quiz_arrow_left" />
+
+                <ImageButton
+                    android:id="@+id/imageButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClickHome"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/quiz_arrow_right" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</ScrollView>
