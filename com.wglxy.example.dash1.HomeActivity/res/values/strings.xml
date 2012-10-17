@@ -37,5 +37,8 @@
     <string name="title_activity_quiz2">Quiz2Activity</string>
     <string name="title_activity_quiz3">Quiz3Activity</string>
     <string name="title_activity_quiz_result">QuizResultActivity</string>
+    <string name="title_activity_mission">MissionActivity</string>
+    <string name="title_activity_scan_qr">ScanQRActivity</string>
+    <string name="title_activity_scanned_options">ScannedOptions</string>
 
 </resources>

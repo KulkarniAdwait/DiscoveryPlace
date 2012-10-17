@@ -155,7 +155,7 @@ public abstract class DashboardActivity extends Activity {
         int id = v.getId();
         switch (id) {
         case R.id.home_btn_feature1:
-            startActivity(new Intent(getApplicationContext(), QuizActivity.class));
+            startActivity(new Intent(getApplicationContext(), MissionActivity.class));
             break;
         case R.id.home_btn_feature2:
             startActivity(new Intent(getApplicationContext(), F2Activity.class));

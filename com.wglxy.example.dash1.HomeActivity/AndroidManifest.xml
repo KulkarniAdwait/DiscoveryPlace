@@ -52,21 +52,33 @@
         <activity
             android:name=".QuizActivity"
             android:label="@string/title_activity_quiz" >
-            
         </activity>
         <activity
             android:name=".Quiz2Activity"
             android:label="@string/title_activity_quiz2" >
-            
         </activity>
         <activity
             android:name=".Quiz3Activity"
             android:label="@string/title_activity_quiz3" >
-                    </activity>
+        </activity>
         <activity
             android:name=".QuizResultActivity"
             android:label="@string/title_activity_quiz_result" >
-                    </activity>
+        </activity>
+        <activity
+            android:name=".MissionActivity"
+            android:label="@string/title_activity_mission" >
+        </activity>
+        <activity
+            android:name=".ScanQRActivity"
+            android:label="@string/title_activity_scan_qr" >
+            
+        </activity>
+        <activity
+            android:name=".ScannedOptions"
+            android:label="@string/title_activity_scanned_options" >
+           
+        </activity>
     </application>
 
 </manifest>
