@@ -40,5 +40,6 @@
     <string name="title_activity_mission">MissionActivity</string>
     <string name="title_activity_scan_qr">ScanQRActivity</string>
     <string name="title_activity_scanned_options">ScannedOptions</string>
+    <string name="QrScreenDisplay">Find the King of the Jungle</string>
 
 </resources>

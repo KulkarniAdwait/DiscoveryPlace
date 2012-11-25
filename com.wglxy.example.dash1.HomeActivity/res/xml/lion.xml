@@ -1,0 +1,18 @@
+﻿<optionList>
+<option>
+    <type>text</type>
+    <details>the details for the exhibit go here</details>
+</option>
+<option>
+    <type>quiz</type>
+    <details>QuizActivity.java</details>
+</option>
+<option>
+    <type>video</type>
+    <details>lion.mp4</details>
+</option>
+<option>
+    <type>game</type>
+    <details>DashboardActivity.java</details>
+</option>
+</optionList>
