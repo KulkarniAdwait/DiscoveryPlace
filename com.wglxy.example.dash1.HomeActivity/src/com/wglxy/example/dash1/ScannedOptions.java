@@ -14,6 +14,8 @@ import java.util.LinkedList;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.content.res.XmlResourceParser;
@@ -21,8 +23,11 @@ import android.content.res.XmlResourceParser;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -47,6 +52,7 @@ public class ScannedOptions extends Activity {
 	ArrayAdapter<String> adapter;
 
 	ListView optionsList;
+	LinkedList<Option> options;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +65,27 @@ public class ScannedOptions extends Activity {
 		optionsList = (ListView) findViewById(R.id.optionsList);
 		optionsList.setAdapter(adapter);
 		getOptions();
+
+		optionsList.setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+
+				clickHandler(position);
+				
+			}
+		});
+		
+
+	}
+	
+	public void clickHandler(int position)
+	{
+		Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage(options.get(position).type + " is clicked.");
+		builder.setPositiveButton("OK", null);
+		builder.show();
+		
+	
 	}
 
 	@Override
@@ -90,11 +117,11 @@ public class ScannedOptions extends Activity {
 															// Caller
 			String fileName = bundle.getString("exhibitName");
 			try {
-				int fileId = getResources().getIdentifier(fileName, "xml", this.getPackageName());
+				int fileId = getResources().getIdentifier(fileName, "xml",
+						this.getPackageName());
 
-				LinkedList<Option> options = parseOptions(fileId);
-				for(int i=0;i<options.size();i++)
-				{
+				options = parseOptions(fileId);
+				for (int i = 0; i < options.size(); i++) {
 					addItems(options.get(i).type, " ");
 				}
 			} catch (IOException e) {
@@ -109,7 +136,8 @@ public class ScannedOptions extends Activity {
 	public LinkedList<Option> parseOptions(int inXml)
 			throws XmlPullParserException, IOException {
 
-		XmlResourceParser parser = getBaseContext().getResources().getXml(inXml);
+		XmlResourceParser parser = getBaseContext().getResources()
+				.getXml(inXml);
 
 		Option option = null;
 		LinkedList<Option> options = new LinkedList<Option>();
@@ -160,4 +188,5 @@ public class ScannedOptions extends Activity {
 		listItems.add(display);
 		adapter.notifyDataSetChanged();
 	}
+
 }
