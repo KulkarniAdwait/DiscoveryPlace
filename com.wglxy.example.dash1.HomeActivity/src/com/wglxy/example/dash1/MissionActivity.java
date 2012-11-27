@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
-import android.widget.TextView;
 
 public class MissionActivity extends Activity {
 	  
@@ -22,6 +21,13 @@ public class MissionActivity extends Activity {
     }
     
     public void onClickMission(View v) {
-    	startActivity(new Intent(getApplicationContext(), ScanQRActivity.class));
+    	//@Gloria: set the text you want displayed in the scan qr screen here
+    	String qrScreenDisplay = "insert the QR scan prompt text here!";
+    	Bundle bundle = new Bundle();
+		bundle.putString(getString(R.string.parameter_qrScreenDisplay), qrScreenDisplay);
+		Intent scanQrIntent = new Intent(getApplicationContext(),
+				ScanQRActivity.class);
+		scanQrIntent.putExtras(bundle);
+		startActivity(scanQrIntent);
     }
 }

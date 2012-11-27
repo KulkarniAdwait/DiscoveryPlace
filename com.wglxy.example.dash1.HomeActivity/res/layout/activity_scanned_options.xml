@@ -35,31 +35,6 @@
                 android:src="@drawable/title_search" />
         </LinearLayout>
     </FrameLayout>
-    <!-- <LinearLayout android:layout_width="fill_parent" -->
-    <!-- android:layout_height="wrap_content" -->
-    <!-- android:gravity="center_vertical" -->
-    <!-- android:orientation="vertical"> -->
-
-
-    <!-- <Button android:id="@+id/option_video" -->
-    <!-- android:textStyle="bold" android:textSize="16dip" android:padding="10dip" android:layout_height="fill_parent" android:layout_width="fill_parent" -->
-    <!-- android:onClick="onClickVideoOption" -->
-    <!-- android:text="Play Video"/> -->
-
-
-    <!-- <Button  android:id="@+id/option_quiz" -->
-    <!-- android:textStyle="bold" android:textSize="16dip" android:padding="10dip" android:layout_height="fill_parent" android:layout_width="fill_parent" -->
-    <!-- android:onClick="onClickQuizOption" -->
-    <!-- android:text="Take Quiz" -->
-    <!-- /> -->
-
-
-    <!-- <Button  android:id="@+id/option_game" -->
-    <!-- android:textStyle="bold" android:textSize="16dip" android:padding="10dip" android:layout_height="fill_parent" android:layout_width="fill_parent" -->
-    <!-- android:onClick="onClickOption" -->
-    <!-- android:text="Play Game" -->
-    <!-- /> -->
-    <!-- </LinearLayout> -->
 
     <ListView
         android:id="@+id/optionsList"

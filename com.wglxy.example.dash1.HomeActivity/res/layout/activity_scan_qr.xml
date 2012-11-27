@@ -2,12 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
+
     <LinearLayout
         android:id="@+id/layout"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical" >
-	<FrameLayout
+
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
@@ -37,29 +39,37 @@
                     android:onClick="onClickSearch"
                     android:src="@drawable/title_search" />
             </LinearLayout>
+        </FrameLayout>
 
-    </FrameLayout>
-     <LinearLayout android:layout_width="fill_parent"
-            android:layout_height="fill_parent" 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:gravity="center_horizontal|center_vertical"
-            android:orientation="vertical">
-            
-    <TextView
-        android:id="@+id/QrScreenDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/QrScreenDisplay"
-        android:textStyle="bold" android:textSize="16dip" />
-         
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Scan QR Code"
-        android:onClick="onClickScanCode"
-        tools:context=".ScanQRActivity"
-        android:textStyle="bold" android:textSize="16dip" android:padding="10dip"/>
-    
-    </LinearLayout>
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/QrScreenDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                 >
+            </TextView>
+
+            <Button
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClickScanCode"
+                android:padding="10dip"
+                android:text="@string/button_scan_qr"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:context=".ScanQRActivity"
+                android:layout_marginTop="40dip"
+                
+                 />
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

@@ -233,7 +233,8 @@ containing a value of this type.
         public static final int activity_scan_qr=0x7f03000d;
         public static final int activity_scanned_options=0x7f03000e;
         public static final int activity_search=0x7f03000f;
-        public static final int main=0x7f030010;
+        public static final int activity_video_player=0x7f030010;
+        public static final int main=0x7f030011;
     }
     public static final class menu {
         public static final int activity_mission=0x7f0b0000;
@@ -243,14 +244,15 @@ containing a value of this type.
         public static final int activity_quiz_result=0x7f0b0004;
         public static final int activity_scan_qr=0x7f0b0005;
         public static final int activity_scanned_options=0x7f0b0006;
+        public static final int activity_video_player=0x7f0b0007;
     }
     public static final class raw {
         public static final int lion=0x7f050000;
     }
     public static final class string {
-        public static final int QrScreenDisplay=0x7f090027;
         public static final int about_intro=0x7f09001c;
         public static final int app_name=0x7f090001;
+        public static final int button_scan_qr=0x7f090027;
         public static final int default_intro=0x7f090015;
         public static final int description_about=0x7f090003;
         public static final int description_feature1=0x7f090006;
@@ -271,6 +273,8 @@ containing a value of this type.
         public static final int hello=0x7f090000;
         public static final int hello_world=0x7f09001e;
         public static final int menu_settings=0x7f09001f;
+        public static final int parameter_exhibitName=0x7f090029;
+        public static final int parameter_qrScreenDisplay=0x7f090028;
         public static final int search_intro=0x7f09001d;
         public static final int title_about=0x7f09000c;
         public static final int title_activity_mission=0x7f090024;
@@ -280,6 +284,7 @@ containing a value of this type.
         public static final int title_activity_quiz_result=0x7f090023;
         public static final int title_activity_scan_qr=0x7f090025;
         public static final int title_activity_scanned_options=0x7f090026;
+        public static final int title_activity_video_player=0x7f09002a;
         public static final int title_feature1=0x7f09000f;
         public static final int title_feature2=0x7f090010;
         public static final int title_feature3=0x7f090011;

@@ -1,56 +1,31 @@
 package com.wglxy.example.dash1;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.LinkedList;
+
+import org.xmlpull.v1.XmlPullParserException;
 
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
-import android.content.Intent;
-import android.content.res.AssetManager;
-import android.content.res.XmlResourceParser;
 
-import android.util.Log;
-import android.view.Menu;
+import android.content.Intent;
+import android.content.res.XmlResourceParser;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
+import android.widget.VideoView;
 
 public class ScannedOptions extends Activity {
 
 	// LIST OF ARRAY STRINGS WHICH WILL SERVE AS LIST ITEMS
 	ArrayList<String> listItems = new ArrayList<String>();
-
 	// DEFINING STRING ADAPTER WHICH WILL HANDLE DATA OF LISTVIEW
 	ArrayAdapter<String> adapter;
-
+	VideoView videoView;
 	ListView optionsList;
 	LinkedList<Option> options;
 
@@ -61,7 +36,6 @@ public class ScannedOptions extends Activity {
 
 		adapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_list_item_1, listItems);
-		// setListAdapter(adapter);
 		optionsList = (ListView) findViewById(R.id.optionsList);
 		optionsList.setAdapter(adapter);
 		getOptions();
@@ -69,37 +43,21 @@ public class ScannedOptions extends Activity {
 		optionsList.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-
 				clickHandler(position);
-				
 			}
 		});
-		
-
-	}
-	
-	public void clickHandler(int position)
-	{
-		Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage(options.get(position).type + " is clicked.");
-		builder.setPositiveButton("OK", null);
-		builder.show();
-		
-	
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.activity_scanned_options, menu);
-		return true;
-	}
-
-	public void onClickVideoOption(View v) {
-		String url = "http://www.youtube.com/watch?v=SE3vCm_4wCI";
-		String autoPlay = "&autoplay=1";
-
-		Uri uri = Uri.parse(url + autoPlay);
-		startActivity(new Intent(Intent.ACTION_VIEW, uri));
+	public void clickHandler(int position) {
+		if (options.get(position).type.equals("video")) {
+			// get uri of video file from the name in the xml
+			Uri uri = Uri.parse("android.resource://" + this.getPackageName() + "/raw/" + options.get(position).details);
+			Bundle bundle = new Bundle();
+			bundle.putString("uri", uri.toString());
+			Intent intent = new Intent(getApplicationContext(), VideoPlayerActivity.class);
+			intent.putExtras(bundle);
+			startActivity(intent);
+		}
 	}
 
 	public void onClickQuizOption(View v) {
@@ -112,23 +70,28 @@ public class ScannedOptions extends Activity {
 
 	private void getOptions() {
 		if (this.getIntent().getExtras() != null) {
-			Bundle bundle = this.getIntent().getExtras();// get the intent &
-															// bundle passed by
-															// Caller
-			String fileName = bundle.getString("exhibitName");
-			try {
-				int fileId = getResources().getIdentifier(fileName, "xml",
-						this.getPackageName());
+			// get the intent & bundle passed by calling activity
+			Bundle bundle = this.getIntent().getExtras();
+			String fileName = null;
+			if (bundle != null) {
+				fileName = bundle.getString("exhibitName");
+			}
+			// do only if the parameter has been passed by calling activity.
+			if (fileName != null && !fileName.equals("")) {
+				try {
+					int fileId = getResources().getIdentifier(fileName, "xml",
+							this.getPackageName());
 
-				options = parseOptions(fileId);
-				for (int i = 0; i < options.size(); i++) {
-					addItems(options.get(i).type, " ");
+					options = parseOptions(fileId);
+					for (int i = 0; i < options.size(); i++) {
+						addItems(options.get(i).type, " ");
+					}
+				} catch (IOException e) {
+					e.printStackTrace();
+
+				} catch (XmlPullParserException e) {
+					e.printStackTrace();
 				}
-			} catch (IOException e) {
-				e.printStackTrace();
-
-			} catch (XmlPullParserException e) {
-				e.printStackTrace();
 			}
 		}
 	}

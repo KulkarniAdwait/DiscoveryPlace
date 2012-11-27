@@ -1,0 +1,14 @@
+<optionList>
+<option>
+    <type>text</type>
+    <details>the details for the exhibit go here</details>
+</option>
+<option>
+    <type>quiz</type>
+    <details>QuizActivity.java</details>
+</option>
+<option>
+    <type>video</type>
+    <details>elephant.mp4</details>
+</option>
+</optionList>

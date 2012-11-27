@@ -40,6 +40,9 @@
     <string name="title_activity_mission">MissionActivity</string>
     <string name="title_activity_scan_qr">ScanQRActivity</string>
     <string name="title_activity_scanned_options">ScannedOptions</string>
-    <string name="QrScreenDisplay">Find the King of the Jungle</string>
+    <string name="button_scan_qr">Scan QR Code</string>
+    <string name="parameter_qrScreenDisplay">qrScreenDisplay</string>
+    <string name="parameter_exhibitName">exhibitName</string>
+    <string name="title_activity_video_player">VideoPlayerActivity</string>
 
 </resources>
