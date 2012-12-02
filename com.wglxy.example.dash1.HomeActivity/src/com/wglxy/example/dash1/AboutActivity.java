@@ -10,7 +10,7 @@ import android.os.Bundle;
  *
  */
 
-public class AboutActivity extends DashboardActivity 
+public class AboutActivity extends HomeActivity 
 {
 
 /**

@@ -9,7 +9,7 @@ import android.os.Bundle;
  *
  */
 
-public class F2Activity extends DashboardActivity 
+public class F2Activity extends HomeActivity 
 {
 
 /**

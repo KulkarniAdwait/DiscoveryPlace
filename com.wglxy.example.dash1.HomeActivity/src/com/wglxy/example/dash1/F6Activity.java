@@ -11,7 +11,7 @@ import android.os.Bundle;
  *
  */
 
-public class F6Activity extends DashboardActivity 
+public class F6Activity extends HomeActivity 
 {
 
 /**

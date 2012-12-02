@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 
-public class Quiz3Activity extends Activity {
+public class Quiz3Activity extends DashboardActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

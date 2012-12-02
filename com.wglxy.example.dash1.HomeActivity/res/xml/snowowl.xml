@@ -9,6 +9,10 @@
 </option>
 <option>
     <type>video</type>
-    <details>elephant</details>
+    <details>lion</details>
+</option>
+<option>
+    <type>game</type>
+    <details>DashboardActivity.java</details>
 </option>
 </optionList>

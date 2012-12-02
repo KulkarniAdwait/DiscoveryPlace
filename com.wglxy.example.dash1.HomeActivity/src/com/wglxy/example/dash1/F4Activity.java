@@ -10,7 +10,7 @@ import android.os.Bundle;
  *
  */
 
-public class F4Activity extends DashboardActivity 
+public class F4Activity extends HomeActivity 
 {
 
 /**

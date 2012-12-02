@@ -23,8 +23,7 @@
     <string name="title_feature5">Help</string>
     <string name="title_feature6">Exit</string>
     <string name="default_intro">This is the default content view for an activity. Be sure to change your activity\'s onCreate method. Use setContentView on a custom layout.</string>
-    <string name="feature1_intro">Missions content goes here.</string>
-    <string name="feature2_intro">Free Roam content goes here.</string>
+    <string name="freeRoam_intro">Feel free to roam the museum. Scan any QR code you see near an exhibit to get more information about it.</string>
     <string name="feature3_intro">Must See content goes here.</string>
     <string name="feature4_intro">Museum Theme content goes here.</string>
     <string name="feature5_intro">Help content goes here.</string>
@@ -44,5 +43,24 @@
     <string name="parameter_qrScreenDisplay">qrScreenDisplay</string>
     <string name="parameter_exhibitName">exhibitName</string>
     <string name="title_activity_video_player">VideoPlayerActivity</string>
-
+    <string name="parameter_missionActivityFlag">flag</string>
+    <string name="parameter_next">next</string>
+    <string name="parameter_list">list</string>
+    <string name="parameter_qrScreenCurrentExhibit">currentExhibit</string>
+    <string name="parameter_mode">mode</string>
+    <string name="mode_mission">mission</string>
+    <string name="mode_freeRoam">freeRoam</string>
+    <string name="mode_mustSee">mustSee</string>
+    <string name="mode_themeOfTheMonth">themeOfTheMonth</string>
+    <string name="option_text">text</string>
+    <string name="option_text_display">Show More Information</string>
+    <string name="option_video">video</string>
+    <string name="option_video_display">Play Video</string>
+    <string name="option_quiz">quiz</string>
+    <string name="option_quiz_display">Take Quiz</string>
+    <string name="option_game">game</string>
+    <string name="option_game_display">Play Game</string>
+    <string name="title_activity_mission_complete">MissionCompleteActivity</string>
+	<string name="button_mission_complete">Back to Home</string>
+	<string name="description_mission_complete">Congratulations! You have successfully completed the mission.</string>
 </resources>

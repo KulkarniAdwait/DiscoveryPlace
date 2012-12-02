@@ -3,6 +3,7 @@ package com.wglxy.example.dash1;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,6 +34,7 @@ public abstract class DashboardActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // setContentView(R.layout.activity_default);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
     /**
@@ -155,10 +157,19 @@ public abstract class DashboardActivity extends Activity {
         int id = v.getId();
         switch (id) {
         case R.id.home_btn_feature1:
-            startActivity(new Intent(getApplicationContext(), MissionActivity.class));
+        	Bundle missionBundle = new Bundle();
+        	missionBundle.putString(getString(R.string.parameter_missionActivityFlag), getString(R.string.parameter_list));
+    		Intent missionIntent = new Intent(getApplicationContext(), MissionActivity.class);
+    		missionIntent.putExtras(missionBundle);
+    		startActivity(missionIntent);
             break;
         case R.id.home_btn_feature2:
-            startActivity(new Intent(getApplicationContext(), F2Activity.class));
+        	Bundle freeRoamBundle = new Bundle();
+        	freeRoamBundle.putString(getString(R.string.parameter_qrScreenDisplay), getString(R.string.freeRoam_intro));
+        	freeRoamBundle.putString(getString(R.string.parameter_mode), getString(R.string.mode_freeRoam));
+    		Intent freeRoamIntent = new Intent(getApplicationContext(), ScanQRActivity.class);
+    		freeRoamIntent.putExtras(freeRoamBundle);
+    		startActivity(freeRoamIntent);
             break;
         case R.id.home_btn_feature3:
             startActivity(new Intent(getApplicationContext(), F3Activity.class));

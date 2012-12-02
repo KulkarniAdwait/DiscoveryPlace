@@ -1,5 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/layout"
+    android:id="@+id/optionsLayout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
@@ -35,7 +35,16 @@
                 android:src="@drawable/title_search" />
         </LinearLayout>
     </FrameLayout>
-
+	<LinearLayout android:id="@+id/layout_1"
+	    	android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+        <Button android:id="@+id/scanbut"
+            android:textStyle="bold" android:textSize="16dip" android:padding="10dip" android:layout_height="fill_parent" android:layout_width="fill_parent"
+            android:onClick="nextExhibit"
+            android:text="Next Exhibit"/>
+    </LinearLayout>
     <ListView
         android:id="@+id/optionsList"
         android:layout_width="fill_parent"

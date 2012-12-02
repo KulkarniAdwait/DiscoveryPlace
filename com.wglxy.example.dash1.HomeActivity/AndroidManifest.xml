@@ -81,6 +81,10 @@
             android:name="com.wglxy.example.dash1.VideoPlayerActivity"
             android:label="@string/title_activity_video_player" >
         </activity>
+        <activity
+            android:name="com.wglxy.example.dash1.MissionCompleteActivity"
+            android:label="@string/title_activity_mission_complete" >
+        </activity>
     </application>
 
 </manifest>

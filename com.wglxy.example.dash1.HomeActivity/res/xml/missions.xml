@@ -1,0 +1,10 @@
+<missionList>
+<mission>
+    <name>Explore the Jungle</name>
+    <details>jungle</details>
+</mission>
+<mission>
+    <name>To the Arctic</name>
+    <details>arctic</details>
+</mission>
+</missionList>
